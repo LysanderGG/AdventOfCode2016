@@ -2,7 +2,6 @@ import hashlib
 
 dest = (3,3)
 states = [("njfxhljp", (0,0))]
-valid_paths = set()
 
 def is_open(code_char):
     return code_char > 'a'
