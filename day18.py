@@ -1,11 +1,7 @@
-def is_trap(char):
-    return char == '^'
-
-
 def new_tile(row, idx):
     left = row[idx - 1] if idx > 0  else "."
     right = row[idx + 1] if idx < len(row) - 1  else "."
-    if (is_trap(left) and not is_trap(right)) or (not is_trap(left) and is_trap(right)):
+    if left != right:
         return "^"
     return "."
 
