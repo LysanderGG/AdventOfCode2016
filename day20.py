@@ -1,4 +1,4 @@
-import sys
+﻿import sys
 
 blacklist = []
 for line in open("day20.txt",'r'):
@@ -7,14 +7,12 @@ for line in open("day20.txt",'r'):
 
 
 def check_first(l):
-    nb_auth = 0
     i = 0
     for range in l:
         if i < range[0]:
             return i
         if range[0] <= i <= range[1]:
             i = range[1] + 1
-            continue
     return i
 
 
@@ -23,12 +21,12 @@ def check_nb(l):
     i = 0
     for range in l:
         if i < range[0]:
-            nb_auth += 1
-            i += 1
+            nb_auth += range[0] - i
+            i = range[1] + 1
         if range[0] <= i <= range[1]:
             i = range[1] + 1
-            continue
 
+    # Handle the case where 4294967295 is not in the blacklist
     if i <= 4294967295:
         return nb_auth + (4294967295 - i + 1)
 
