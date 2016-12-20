@@ -51,12 +51,9 @@ def elves_play_2(nb_elves):
     nb_removed = 0
     l = [(i,1) for i in range(1, nb_elves+1)]
     while len(l) > 1:
-        if first_half and i >= len(l) // 2:
-            first_half = False
-            nb_removed = 0
-            l, i = remove_zeros_and_keep_current(l, i)
-        elif not first_half and i <= len(l) // 2:
-            first_half = True
+        if (first_half and i >= len(l) // 2) \
+        or (not first_half and i <= len(l) // 2):
+            first_half = not first_half
             nb_removed = 0
             l, i = remove_zeros_and_keep_current(l, i)
         elif len(l) < 3:
@@ -71,9 +68,6 @@ def elves_play_2(nb_elves):
 
         i = next_idx(l, i)
 
-    print(l)
-    l = remove_zeros(l)
-    print(l)
     return l[0][0]
 
 
