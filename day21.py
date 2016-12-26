@@ -80,7 +80,6 @@ def rotate_pos_reverse(x, p):
     new_p = p
     while True:
         new_p = rotate_left(1, new_p)
-        i = new_p.index(x)
         if rotate_pos(x, new_p) == p:
             return new_p
 
