@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<ProfilingTarget xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProjectTarget>
+    <TargetProject>0764065f-bdc4-44be-99ca-260f4caa3f56</TargetProject>
+    <FriendlyName>AdventOfCode2016</FriendlyName>
+  </ProjectTarget>
+</ProfilingTarget>
