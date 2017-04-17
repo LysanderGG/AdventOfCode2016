@@ -30,8 +30,8 @@ def decode2(input, pass_size):
 if __name__ == "__main__":
     input = "ojvtpuvg"
 
-    #ans = decode(input, 8)
-    #print("Part1: {}".format(ans))
+    ans = decode(input, 8)
+    print("Part1: {}".format(ans))
 
     ans2 = decode2(input, 8)
     print("Part2: {}".format(ans2))
