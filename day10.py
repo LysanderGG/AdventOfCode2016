@@ -4,8 +4,8 @@ import re
 class Bot:
     def __init__(self, id):
         self.id = id
-        self.low_target = None # Bot ot Output
-        self.high_target = None # Bot ot Output
+        self.low_target = None # Bot or Output
+        self.high_target = None # Bot or Output
         self.chips = () # tuple of chip_id
 
     def can_process(self):
