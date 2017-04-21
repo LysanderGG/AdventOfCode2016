@@ -1,9 +1,19 @@
 import re
+from abc import ABC, abstractmethod
 
 
-class Bot:
+class ChipContainer(ABC):
     def __init__(self, id):
         self.id = id
+
+    @abstractmethod
+    def add_chip(self, chip_id):
+        pass
+
+
+class Bot(ChipContainer):
+    def __init__(self, id):
+        super(Bot, self).__init__(id)
         self.low_target = None # Bot or Output
         self.high_target = None # Bot or Output
         self.chips = () # tuple of chip_id
@@ -23,9 +33,9 @@ class Bot:
             print("Part1: {}".format(self.id))
 
 
-class Output:
+class Output(ChipContainer):
     def __init__(self, id):
-        self.id = id
+        super(Output, self).__init__(id)
         self.chip = None
 
     def add_chip(self, chip_id):
